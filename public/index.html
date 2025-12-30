@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sando’s Advisory | The Discreet Ally to Elite Leaders</title>
+    <meta name="description" content="Bespoke strategic advisory and private concierge for high-net-worth individuals and founders.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'charcoal': '#0B1120',
+                        'slate-dark': '#1A1A1A',
+                        'accent-grey': '#E0E0E0',
+                        'gold-muted': '#D4AF37'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-charcoal text-accent-grey font-sans antialiased selection:bg-gold-muted selection:text-charcoal">
+
+    <header class="fixed w-full z-50 bg-charcoal/80 backdrop-blur-md border-b border-white/5">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center" aria-label="Global Navigation">
+            <div class="text-xl font-serif tracking-widest text-white uppercase italic">Sando’s Advisory</div>
+            <ul class="hidden md:flex space-x-10 text-sm tracking-widest uppercase font-light">
+                <li><a href="#advisory" class="hover:text-white transition-colors">Advisory</a></li>
+                <li><a href="#platinum" class="hover:text-white transition-colors">Platinum</a></li>
+                <li><a href="#publishing" class="hover:text-white transition-colors">Publishing</a></li>
+                <li><a href="/ethics" class="hover:text-white transition-colors">Ethics</a></li>
+            </ul>
+            <a href="#contact" class="hidden md:block px-5 py-2 border border-white/20 text-xs tracking-widest uppercase hover:bg-white hover:text-charcoal transition-all duration-300">
+                Apply for Membership
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
+            <div class="absolute inset-0 z-0 opacity-20">
+                <img src="img/hero-abstract.jpg" alt="" class="w-full h-full object-cover grayscale">
+                <div class="absolute inset-0 bg-gradient-to-b from-charcoal via-transparent to-charcoal"></div>
+            </div>
+
+            <div class="relative z-10 max-w-4xl space-y-8">
+                <h1 class="text-4xl md:text-6xl font-serif italic text-white leading-tight">
+                    The Discreet Ally to Elite Leaders.
+                </h1>
+                <p class="text-lg md:text-xl font-light text-accent-grey/80 max-w-2xl mx-auto leading-relaxed">
+                    Positioning the service as the "Alfred" to your "Bruce Wayne"—a discreet ally working behind the scenes to empower the leader.
+                </p>
+                <div class="pt-6">
+                    <a href="#contact" class="px-10 py-4 bg-white text-charcoal font-semibold tracking-widest uppercase text-sm hover:bg-gold-muted transition-colors duration-300">
+                        Request a Private Briefing
+                    </a>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-10 text-center w-full">
+                <p class="text-xs tracking-[0.3em] uppercase opacity-40 italic">
+                    Success is measured by advisor redundancy.
+                </p>
+            </div>
+        </section>
+
+        <section id="advisory" class="py-32 px-6 bg-slate-dark">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                    <div id="platinum" class="space-y-6 group">
+                        <div class="h-px w-12 bg-gold-muted group-hover:w-full transition-all duration-700"></div>
+                        <h2 class="text-2xl font-serif italic text-white">Platinum Assistant</h2>
+                        <p class="font-light text-accent-grey/70 leading-relaxed">
+                            A $77,777.77 USD exclusive concierge engagement. We utilize the "Hemisphere Advantage"—completing your critical tasks in New Zealand while you rest in the US or UK.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6 group">
+                        <div class="h-px w-12 bg-gold-muted group-hover:w-full transition-all duration-700"></div>
+                        <h2 class="text-2xl font-serif italic text-white">AI & Strategic Advisory</h2>
+                        <p class="font-light text-accent-grey/70 leading-relaxed">
+                            Bespoke operational scaling and ethical AI implementation. We teach you to fish, then we disappear into the shadows.
+                        </p>
+                    </div>
+
+                    <div id="publishing" class="space-y-6 group">
+                        <div class="h-px w-12 bg-gold-muted group-hover:w-full transition-all duration-700"></div>
+                        <h2 class="text-2xl font-serif italic text-white">Publishing & IP</h2>
+                        <p class="font-light text-accent-grey/70 leading-relaxed">
+                            Knowledge distilled from real boardroom experience. Elite resources designed for those who value room intelligence over generic guidance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-32 px-6 text-center border-t border-white/5">
+            <div class="max-w-2xl mx-auto space-y-10">
+                <p class="text-sm tracking-widest uppercase text-gold-muted italic">
+                    Current Capacity: 5 of 7 active consulting slots.
+                </p>
+                <blockquote class="text-2xl font-serif italic text-white/90">
+                    "A level of personalized service that eventually makes the advisor unnecessary to daily operations."
+                </blockquote>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-20 px-6 border-t border-white/5 text-center space-y-4">
+        <p class="text-xs uppercase tracking-widest opacity-40">
+            &copy; 2025 Sando’s Advisory. Private Members' Club Dynamics.
+        </p>
+        <div class="flex justify-center space-x-6 text-[10px] uppercase tracking-widest opacity-60">
+            <a href="/ethics" class="hover:text-white">Ethical Boundaries</a>
+            <a href="/terms" class="hover:text-white">Terms of Discretion</a>
+        </div>
+    </footer>
+
+</body>
+</html>
