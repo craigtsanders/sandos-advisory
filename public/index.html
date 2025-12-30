@@ -9,13 +9,22 @@
         .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; border-bottom: 1px solid #222; }
         h1 { font-weight: 200; font-size: 3rem; letter-spacing: 5px; margin-bottom: 10px; }
         .tagline { color: #888; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; }
-        .section { padding: 100px 20px; max-width: 900px; margin: 0 auto; }
-        h2 { font-weight: 300; letter-spacing: 2px; color: #fff; border-left: 2px solid #fff; padding-left: 20px; }
+        .section { padding: 80px 20px; max-width: 900px; margin: 0 auto; }
+        h2 { font-weight: 300; letter-spacing: 2px; color: #fff; border-left: 2px solid #fff; padding-left: 20px; margin-top: 50px; }
         p { color: #bbb; font-size: 1.1rem; }
-        .contact-box { background: #0a0a0a; border: 1px solid #222; padding: 50px; margin-top: 50px; }
-        input, textarea { width: 100%; padding: 15px; background: #151515; border: 1px solid #333; color: white; margin-bottom: 20px; font-family: inherit; box-sizing: border-box; }
-        button { width: 100%; padding: 20px; background: #fff; color: #000; border: none; font-weight: bold; cursor: pointer; letter-spacing: 2px; transition: 0.3s; }
-        button:hover { background: #ccc; }
+        .subject-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+        .subject-card { border: 1px solid #222; padding: 30px; transition: 0.3s; text-decoration: none; color: inherit; display: block; }
+        .subject-card:hover { border-color: #fff; background: #0a0a0a; }
+        .subject-card h3 { margin: 0 0 10px 0; font-weight: 300; letter-spacing: 1px; }
+        .subject-card p { font-size: 0.9rem; margin: 0; color: #777; }
+        
+        /* Quiz Styling */
+        .quiz-container { background: #0a0a0a; border: 1px solid #222; padding: 40px; margin-top: 40px; text-align: center; }
+        input { width: 100%; max-width: 300px; padding: 15px; background: #151515; border: 1px solid #333; color: white; margin-bottom: 20px; text-align: center; font-family: inherit; }
+        #reveal-zone { display: none; margin-top: 20px; padding: 20px; border-top: 1px dashed #444; }
+        .btn-check { padding: 15px 30px; background: #fff; color: #000; border: none; font-weight: bold; cursor: pointer; letter-spacing: 1px; transition: 0.3s; }
+        .btn-check:hover { background: #ccc; }
+        .linkedin-btn { display: inline-block; margin-top: 20px; padding: 15px 30px; background: #0077B5; color: #fff; text-decoration: none; font-weight: bold; letter-spacing: 1px; }
     </style>
 </head>
 <body>
@@ -29,26 +38,54 @@
         <h2>THE ROLE</h2>
         <p>In a world of noise, we provide the silence. Sando’s Advisory operates as the "Alfred" to elite leaders—managing high-stakes AI implementation, executive publishing, and private confidential briefing.</p>
         
-        <h2>SERVICES</h2>
-        <p><strong>Platinum Assistant:</strong> High-friction executive management for those who value privacy over accessibility.</p>
-        <p><strong>AI Strategy:</strong> Bespoke tech stacks built for speed, performance, and total data sovereignty.</p>
+        <h2>SUBJECT AREAS</h2>
+        <div class="subject-grid">
+            <a href="/pages/ai-strategy.html" class="subject-card">
+                <h3>AI STRATEGY</h3>
+                <p>Bespoke tech stacks built for speed, performance, and total data sovereignty. [View Briefing]</p>
+            </a>
+            <a href="/pages/platinum-assistant.html" class="subject-card">
+                <h3>PLATINUM ASSISTANT</h3>
+                <p>High-friction executive management for those who value privacy over accessibility. [View Briefing]</p>
+            </a>
+        </div>
     </section>
 
     <section class="section" style="background: #080808;">
-        <h2>CONFIDENTIAL ENQUIRY</h2>
-        <p style="margin-bottom: 40px;">Entry into the portfolio is by vetted enquiry only. Please state the nature of your requirement.</p>
+        <h2>ACCESS SECURE CONTACT</h2>
+        <p>Direct access is reserved for verified partners. Solve the credential challenge to reveal the LinkedIn pathway.</p>
         
-        <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
-            <input type="text" name="name" placeholder="Full Legal Name" required>
-            <input type="email" name="email" placeholder="Corporate Identity" required>
-            <textarea name="message" rows="5" placeholder="Nature of Brief (Discretion Advised)" required></textarea>
-            <button type="submit">INITIATE VETTING PROCESS</button>
-        </form>
+        <div class="quiz-container">
+            <p style="color:#888; font-size:0.9rem; margin-bottom: 20px;">VETTING CHALLENGE: Which superhero does Alfred serve?</p>
+            <input type="text" id="quiz-input" placeholder="Enter Identity...">
+            <br>
+            <button class="btn-check" onclick="checkVetting()">VERIFY CREDENTIALS</button>
+
+            <div id="reveal-zone">
+                <p>Identity Verified. You may proceed to the LinkedIn briefing to locate secure contact details.</p>
+                <a href="https://linkedin.com/in/craigsandersch" target="_blank" class="linkedin-btn">OPEN LINKEDIN PROFILE</a>
+            </div>
+        </div>
     </section>
 
     <footer style="padding: 40px; text-align: center; font-size: 0.7rem; color: #444; letter-spacing: 1px;">
         &copy; 2025 SANDO’S ADVISORY. ALL RIGHTS RESERVED.
     </footer>
+
+    <script>
+        function checkVetting() {
+            const answer = document.getElementById('quiz-input').value.toLowerCase().trim();
+            const revealZone = document.getElementById('reveal-zone');
+            
+            // Case-insensitive check for 'batman'
+            if (answer === 'batman') {
+                revealZone.style.display = 'block';
+                document.getElementById('quiz-input').style.borderColor = '#00ff00';
+            } else {
+                alert('Access Denied. Incorrect credentials.');
+            }
+        }
+    </script>
 
 </body>
 </html>
