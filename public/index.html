@@ -14,15 +14,14 @@
         p { color: #bbb; font-size: 1.1rem; }
         .subject-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
         .subject-card { border: 1px solid #222; padding: 30px; transition: 0.3s; text-decoration: none; color: inherit; display: block; }
-        .subject-card:hover { border-color: #fff; background: #0a0a0a; }
+        .subject-card:hover { border-color: #fff; background: #111; }
         .subject-card h3 { margin: 0 0 10px 0; font-weight: 300; letter-spacing: 1px; }
         .subject-card p { font-size: 0.9rem; margin: 0; color: #777; }
         .quiz-container { background: #0a0a0a; border: 1px solid #222; padding: 40px; margin-top: 40px; text-align: center; }
         input { width: 100%; max-width: 300px; padding: 15px; background: #151515; border: 1px solid #333; color: white; margin-bottom: 20px; text-align: center; font-family: inherit; }
         #reveal-zone { display: none; margin-top: 20px; padding: 20px; border-top: 1px dashed #444; }
         .btn-check { padding: 15px 30px; background: #fff; color: #000; border: none; font-weight: bold; cursor: pointer; letter-spacing: 1px; transition: 0.3s; }
-        .btn-check:hover { background: #ccc; }
-        .linkedin-btn { display: inline-block; margin-top: 20px; padding: 15px 30px; background: #0077B5; color: #fff; text-decoration: none; font-weight: bold; letter-spacing: 1px; }
+        .linkedin-btn { display: inline-block; margin-top: 20px; padding: 15px 30px; background: #0077B5; color: #fff; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -33,49 +32,45 @@
 
     <section class="section">
         <h2>THE ROLE</h2>
-        <p>In a world of noise, we provide the silence. Sando’s Advisory operates as the "Alfred" to elite leaders—managing high-stakes AI implementation, executive publishing, and private confidential briefing.</p>
+        <p>In a world of noise, we provide the silence. Sando’s Advisory operates as the "Alfred" to elite leaders.</p>
         
         <h2>SUBJECT AREAS</h2>
         <div class="subject-grid">
-            <a href="pages/ai-strategy.html" class="subject-card">
+            <a href="/pages/ai-strategy" class="subject-card">
                 <h3>AI STRATEGY</h3>
-                <p>Bespoke tech stacks built for speed, performance, and total data sovereignty. [View Briefing]</p>
+                <p>Bespoke tech stacks built for speed and data sovereignty. [View Briefing]</p>
             </a>
-            <a href="pages/platinum-assistant.html" class="subject-card">
+            <a href="/pages/platinum-assistant" class="subject-card">
                 <h3>PLATINUM ASSISTANT</h3>
-                <p>High-friction executive management for those who value privacy over accessibility. [View Briefing]</p>
+                <p>High-friction executive management. [View Briefing]</p>
             </a>
         </div>
     </section>
 
     <section class="section" style="background: #080808;">
-        <h2>ACCESS SECURE CONTACT</h2>
-        <p>Direct access is reserved for verified partners. Solve the credential challenge to reveal the LinkedIn pathway.</p>
+        <h2>SECURE CONTACT</h2>
         <div class="quiz-container">
             <p style="color:#888; font-size:0.9rem; margin-bottom: 20px;">VETTING CHALLENGE: Which superhero does Alfred serve?</p>
             <input type="text" id="quiz-input" placeholder="Enter Identity...">
             <br>
             <button class="btn-check" onclick="checkVetting()">VERIFY CREDENTIALS</button>
             <div id="reveal-zone">
-                <p>Identity Verified. You may proceed to the LinkedIn briefing to locate secure contact details.</p>
                 <a href="https://linkedin.com/in/craigsandersch" target="_blank" class="linkedin-btn">OPEN LINKEDIN PROFILE</a>
             </div>
         </div>
     </section>
 
-    <footer style="padding: 40px; text-align: center; font-size: 0.7rem; color: #444; letter-spacing: 1px;">
-        &copy; 2025 SANDO’S ADVISORY. ALL RIGHTS RESERVED.
+    <footer style="padding: 40px; text-align: center; font-size: 0.7rem; color: #444;">
+        &copy; 2025 SANDO’S ADVISORY.
     </footer>
 
     <script>
         function checkVetting() {
             const answer = document.getElementById('quiz-input').value.toLowerCase().trim();
-            const revealZone = document.getElementById('reveal-zone');
             if (answer === 'batman') {
-                revealZone.style.display = 'block';
-                document.getElementById('quiz-input').style.borderColor = '#00ff00';
+                document.getElementById('reveal-zone').style.display = 'block';
             } else {
-                alert('Access Denied. Incorrect credentials.');
+                alert('Access Denied.');
             }
         }
     </script>
