@@ -17,8 +17,6 @@
         .subject-card:hover { border-color: #fff; background: #0a0a0a; }
         .subject-card h3 { margin: 0 0 10px 0; font-weight: 300; letter-spacing: 1px; }
         .subject-card p { font-size: 0.9rem; margin: 0; color: #777; }
-        
-        /* Quiz Styling */
         .quiz-container { background: #0a0a0a; border: 1px solid #222; padding: 40px; margin-top: 40px; text-align: center; }
         input { width: 100%; max-width: 300px; padding: 15px; background: #151515; border: 1px solid #333; color: white; margin-bottom: 20px; text-align: center; font-family: inherit; }
         #reveal-zone { display: none; margin-top: 20px; padding: 20px; border-top: 1px dashed #444; }
@@ -28,7 +26,6 @@
     </style>
 </head>
 <body>
-
     <section class="hero">
         <h1>SANDO’S ADVISORY</h1>
         <div class="tagline">Discreet & Elite Configuration</div>
@@ -40,11 +37,11 @@
         
         <h2>SUBJECT AREAS</h2>
         <div class="subject-grid">
-            <a href="/pages/ai-strategy.html" class="subject-card">
+            <a href="pages/ai-strategy.html" class="subject-card">
                 <h3>AI STRATEGY</h3>
                 <p>Bespoke tech stacks built for speed, performance, and total data sovereignty. [View Briefing]</p>
             </a>
-            <a href="/pages/platinum-assistant.html" class="subject-card">
+            <a href="pages/platinum-assistant.html" class="subject-card">
                 <h3>PLATINUM ASSISTANT</h3>
                 <p>High-friction executive management for those who value privacy over accessibility. [View Briefing]</p>
             </a>
@@ -54,13 +51,11 @@
     <section class="section" style="background: #080808;">
         <h2>ACCESS SECURE CONTACT</h2>
         <p>Direct access is reserved for verified partners. Solve the credential challenge to reveal the LinkedIn pathway.</p>
-        
         <div class="quiz-container">
             <p style="color:#888; font-size:0.9rem; margin-bottom: 20px;">VETTING CHALLENGE: Which superhero does Alfred serve?</p>
             <input type="text" id="quiz-input" placeholder="Enter Identity...">
             <br>
             <button class="btn-check" onclick="checkVetting()">VERIFY CREDENTIALS</button>
-
             <div id="reveal-zone">
                 <p>Identity Verified. You may proceed to the LinkedIn briefing to locate secure contact details.</p>
                 <a href="https://linkedin.com/in/craigsandersch" target="_blank" class="linkedin-btn">OPEN LINKEDIN PROFILE</a>
@@ -76,8 +71,6 @@
         function checkVetting() {
             const answer = document.getElementById('quiz-input').value.toLowerCase().trim();
             const revealZone = document.getElementById('reveal-zone');
-            
-            // Case-insensitive check for 'batman'
             if (answer === 'batman') {
                 revealZone.style.display = 'block';
                 document.getElementById('quiz-input').style.borderColor = '#00ff00';
@@ -86,6 +79,5 @@
             }
         }
     </script>
-
 </body>
 </html>
