@@ -1,29 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Platinum Assistant | Sando’s Advisory</title>
-    <style>
-        body { background: #050505; color: #fff; font-family: 'Helvetica Neue', sans-serif; margin: 0; line-height: 1.6; }
-        .header { padding: 40px 20px; border-bottom: 1px solid #222; text-align: center; }
-        .back-link { color: #888; text-decoration: none; font-size: 0.8rem; letter-spacing: 1px; transition: 0.3s; border: 1px solid #333; padding: 10px 20px; }
-        .back-link:hover { color: #fff; border-color: #fff; background: #111; }
-        .section { padding: 80px 20px; max-width: 800px; margin: 0 auto; }
-        h1 { font-weight: 200; letter-spacing: 3px; margin-top: 40px; }
-        h2 { font-weight: 300; letter-spacing: 1px; color: #fff; border-left: 2px solid #fff; padding-left: 20px; margin-top: 40px; }
-        p { color: #bbb; font-size: 1.1rem; margin-bottom: 20px; }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e2e8f0", 
+                        "background-dark": "#0B1120", 
+                        "card-dark": "#161e2e",
+                        "text-muted": "#94a3b8",
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <div class="header">
-        <a href="../index.html" class="back-link">← RETURN TO MAIN CONFIGURATION</a>
-        <h1>PLATINUM ASSISTANT</h1>
+<body class="bg-background-dark text-white min-h-screen font-['Inter']">
+
+    <header class="sticky top-0 z-50 bg-[#0B1120]/90 backdrop-blur-md border-b border-white/5">
+        <div class="flex items-center justify-between p-4">
+            <a href="../index.html" class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-2xl">arrow_back</span>
+                <span class="text-white text-sm font-bold uppercase tracking-tight">Return</span>
+            </a>
+            <span class="material-symbols-outlined text-primary text-2xl">shield_moon</span>
+        </div>
+    </header>
+
+    <main class="flex flex-col pb-32">
+        <section class="px-6 pt-12 pb-8 text-left max-w-lg mx-auto">
+            <p class="text-primary text-xs font-bold uppercase tracking-widest mb-2">The Concierge</p>
+            <h2 class="text-3xl font-black leading-tight mb-6">Platinum <br><span class="text-primary">Assistant</span></h2>
+            <p class="text-text-muted text-base font-light leading-relaxed mb-8">
+                Silent execution of your most complex personal and professional logistics. We ensure your life runs with the precision of a Swiss timepiece, so you can remain focused on the principal mission.
+            </p>
+        </section>
+
+        <div class="px-4 flex flex-col gap-6 max-w-lg mx-auto">
+            <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 text-center">
+                <p class="text-primary text-xs font-bold uppercase tracking-widest mb-2">Current Capacity</p>
+                <h4 class="text-2xl font-black text-white mb-1">Only 2 Spots Remaining</h4>
+                <p class="text-text-muted text-sm italic">Limited to 5 simultaneous client engagements.</p>
+            </div>
+
+            <div class="bg-card-dark border border-white/5 rounded-xl p-6">
+                <span class="material-symbols-outlined text-primary mb-4">lifestyle</span>
+                <h4 class="text-white text-lg font-bold mb-2">Lifestyle Engineering</h4>
+                <p class="text-text-muted text-sm leading-relaxed">
+                    From complex international travel logistics to private asset management. We handle the friction of modern elite life.
+                </p>
+            </div>
+
+            <div class="bg-card-dark border border-white/5 rounded-xl p-6">
+                <span class="material-symbols-outlined text-primary mb-4">encrypted</span>
+                <h4 class="text-white text-lg font-bold mb-2">Discretion Guaranteed</h4>
+                <p class="text-text-muted text-sm leading-relaxed">
+                    Operate with total anonymity. We act as the buffer between you and the public-facing requirements of your lifestyle.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <div class="fixed bottom-0 left-0 w-full bg-[#0B1120]/95 backdrop-blur border-t border-white/10 p-4 z-40">
+        <a href="../index.html" class="w-full bg-primary text-background-dark font-bold py-3 rounded-lg flex items-center justify-center gap-2">
+            <span>Inquire for Capacity</span>
+            <span class="material-symbols-outlined text-xl">verified_user</span>
+        </a>
     </div>
-    <section class="section">
-        <p>The Platinum Assistant service is an executive shield, protecting the principal's most valuable asset: focus.</p>
-        <h2>ENGAGEMENT</h2>
-        <p>High-friction management for those who value privacy over accessibility. Availability is strictly limited to ensure a 1:1 attention ratio.</p>
-    </section>
+
 </body>
 </html>
