@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Publishing & IP | Sando’s Advisory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e2e8f0", 
+                        "background-dark": "#0B1120", 
+                        "card-dark": "#161e2e",
+                        "text-muted": "#94a3b8",
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background-dark text-white min-h-screen font-['Inter']">
+
+    <header class="sticky top-0 z-50 bg-[#0B1120]/90 backdrop-blur-md border-b border-white/5">
+        <div class="flex items-center justify-between p-4">
+            <a href="../index.html" class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-2xl">arrow_back</span>
+                <span class="text-white text-sm font-bold uppercase tracking-tight">Return</span>
+            </a>
+            <span class="material-symbols-outlined text-primary text-2xl">shield_moon</span>
+        </div>
+    </header>
+
+    <main class="flex flex-col pb-32">
+        <section class="px-6 pt-12 pb-8 text-left max-w-lg mx-auto">
+            <p class="text-primary text-xs font-bold uppercase tracking-widest mb-2">The Knowledge</p>
+            <h2 class="text-4xl font-black leading-tight mb-6">Publishing <br>& <span class="text-primary">Intellectual Property</span></h2>
+            <p class="text-text-muted text-base font-light leading-relaxed mb-8">
+                Codifying elite strategy into tangible assets. These works are designed to outlast tenures and secure legacy.
+            </p>
+        </section>
+
+        <div class="px-4 flex flex-col gap-8 max-w-lg mx-auto">
+            
+            <div class="group bg-card-dark border border-white/10 rounded-xl overflow-hidden shadow-2xl">
+                <div class="h-48 bg-gradient-to-br from-primary/20 to-background-dark flex items-center justify-center border-b border-white/5">
+                    <span class="material-symbols-outlined text-primary text-7xl opacity-50">book_2</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-xl font-bold text-white">The Redundancy Blueprint</h4>
+                        <span class="text-primary font-mono text-sm">$49.00</span>
+                    </div>
+                    <p class="text-text-muted text-sm leading-relaxed mb-6">
+                        The definitive guide to engineering your own exit while ensuring operational stability. 
+                    </p>
+                    <button class="w-full bg-primary text-background-dark font-black py-3 rounded flex items-center justify-center gap-2 hover:bg-white transition-colors">
+                        <span>Secure Copy</span>
+                        <span class="material-symbols-outlined text-lg">shopping_bag</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="group bg-card-dark border border-white/10 rounded-xl overflow-hidden shadow-2xl">
+                <div class="h-48 bg-gradient-to-br from-primary/10 to-background-dark flex items-center justify-center border-b border-white/5">
+                    <span class="material-symbols-outlined text-primary text-7xl opacity-30">menu_book</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-xl font-bold text-white">Private AI Sovereignty</h4>
+                        <span class="text-primary font-mono text-sm">$75.00</span>
+                    </div>
+                    <p class="text-text-muted text-sm leading-relaxed mb-6">
+                        A tactical briefing on building unassailable data positions within a private AI perimeter.
+                    </p>
+                    <button class="w-full bg-primary text-background-dark font-black py-3 rounded flex items-center justify-center gap-2 hover:bg-white transition-colors">
+                        <span>Secure Copy</span>
+                        <span class="material-symbols-outlined text-lg">shopping_bag</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="fixed bottom-0 left-0 w-full bg-[#0B1120]/95 backdrop-blur border-t border-white/10 p-4 z-40">
+        <div class="max-w-lg mx-auto flex items-center justify-between text-xs text-text-muted">
+            <p>Guest Checkout via Stripe Payment Links</p>
+            <span class="material-symbols-outlined text-primary">encrypted</span>
+        </div>
+    </div>
+
+</body>
+</html>
