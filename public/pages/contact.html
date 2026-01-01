@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Contact | SANDO</title>
+    <title>Secure Briefing Portal | SANDO</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -33,47 +33,98 @@
             </a>
             <div class="flex items-center gap-2">
                 <span class="material-symbols-outlined text-primary text-3xl">shield_moon</span>
-                <h1 class="text-white text-xl font-black tracking-[0.2em] uppercase">SANDO</h1>
+                <h1 class="text-white text-xl font-black tracking-[0.2em] uppercase text-transparent bg-clip-text bg-gradient-to-r from-primary to-white">SANDO</h1>
             </div>
         </div>
     </header>
 
     <main class="flex flex-col pb-32">
-        <section class="px-6 pt-12 pb-8 max-w-lg mx-auto">
-            <p class="text-primary text-xs font-bold uppercase tracking-widest mb-2">Confidential Inquiry</p>
-            <h2 class="text-3xl font-black leading-tight mb-6">Secure <span class="text-primary text-transparent bg-clip-text bg-gradient-to-r from-primary to-white">Portal</span></h2>
-            <p class="text-text-muted text-sm font-light leading-relaxed mb-8">
-                Briefings are accepted by invitation or vetted inquiry only. Please define the nature of your requirement with absolute clarity.
-            </p>
+        <section class="px-6 pt-12 pb-8 max-w-lg mx-auto w-full">
+            <p class="text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-2">Identity Verified</p>
+            <h2 class="text-3xl font-black leading-tight mb-6">Secure <span class="text-primary">Portal</span></h2>
+            
+            <div class="bg-primary/5 border border-primary/20 rounded-lg p-4 mb-8">
+                <p class="text-text-muted text-xs leading-relaxed italic">
+                    "Identity recognized. To proceed with the briefing, provide a valid secure email address. This will be used exclusively for high-priority transmission."
+                </p>
+            </div>
 
-            <form action="#" class="space-y-6">
+            <form id="secure-briefing-form" class="space-y-6">
                 <div>
                     <label class="block text-[10px] uppercase tracking-widest text-primary font-bold mb-2">Principal Identity</label>
-                    <input type="text" class="w-full bg-card-dark border border-white/10 rounded-lg p-4 text-white focus:border-primary/50 outline-none transition-all" placeholder="Legal Name or Entity">
+                    <input type="text" id="principal-id" required class="w-full bg-card-dark border border-white/10 rounded-lg p-4 text-white focus:border-primary/50 outline-none transition-all" placeholder="Legal Name or Entity">
                 </div>
+
+                <div>
+                    <label class="block text-[10px] uppercase tracking-widest text-primary font-bold mb-2">Secure Contact Email</label>
+                    <input type="email" id="principal-email" required class="w-full bg-card-dark border border-white/10 rounded-lg p-4 text-white focus:border-primary/50 outline-none transition-all" placeholder="principal@entity.com">
+                    <p id="email-error" class="hidden text-red-400 text-[10px] mt-2 uppercase font-bold tracking-widest">Please enter a valid email address.</p>
+                </div>
+
                 <div>
                     <label class="block text-[10px] uppercase tracking-widest text-primary font-bold mb-2">Briefing Classification</label>
-                    <select class="w-full bg-card-dark border border-white/10 rounded-lg p-4 text-white focus:border-primary/50 outline-none transition-all appearance-none">
+                    <select id="classification" class="w-full bg-card-dark border border-white/10 rounded-lg p-4 text-white focus:border-primary/50 outline-none transition-all appearance-none">
                         <option>AI & Strategic Advisory</option>
                         <option>Platinum Assistant Engagement</option>
                         <option>Legacy / Publishing Inquiry</option>
                         <option>Other / Discreet Matter</option>
                     </select>
                 </div>
+
                 <div>
                     <label class="block text-[10px] uppercase tracking-widest text-primary font-bold mb-2">Statement of Requirement</label>
-                    <textarea rows="4" class="w-full bg-card-dark border border-white/10 rounded-lg p-4 text-white focus:border-primary/50 outline-none transition-all" placeholder="Provide a high-level overview of the assistance required."></textarea>
+                    <textarea id="requirement" rows="4" required class="w-full bg-card-dark border border-white/10 rounded-lg p-4 text-white focus:border-primary/50 outline-none transition-all" placeholder="Provide a high-level overview of the assistance required."></textarea>
                 </div>
-                <button type="submit" class="w-full bg-primary text-background-dark font-black py-4 rounded-xl hover:bg-white transition-all shadow-2xl">
-                    SUBMIT FOR VETTING
+
+                <button type="submit" class="w-full bg-white text-background-dark font-black py-4 rounded-xl hover:bg-primary transition-all shadow-2xl uppercase tracking-widest">
+                    Transmit Secure Briefing
                 </button>
             </form>
         </section>
     </main>
 
     <div class="fixed bottom-0 left-0 w-full bg-[#0B1120]/95 backdrop-blur border-t border-white/10 p-4 z-40 text-center">
-        <p class="text-[10px] text-text-muted uppercase tracking-[0.3em]">End of Briefing // SANDO SECURE</p>
+        <p class="text-[10px] text-text-muted uppercase tracking-[0.3em]">Direct Transmission // SANDO Private Office</p>
     </div>
+
+    <script>
+        document.getElementById('secure-briefing-form').onsubmit = function(e) {
+            e.preventDefault();
+            
+            const emailField = document.getElementById('principal-email');
+            const emailError = document.getElementById('email-error');
+            
+            // Basic regex for email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!emailRegex.test(emailField.value)) {
+                emailError.classList.remove('hidden');
+                emailField.classList.add('border-red-500');
+                return;
+            } else {
+                emailError.classList.add('hidden');
+                emailField.classList.remove('border-red-500');
+            }
+
+            const identity = document.getElementById('principal-id').value;
+            const email = emailField.value;
+            const classification = document.getElementById('classification').value;
+            const requirement = document.getElementById('requirement').value;
+
+            const subject = encodeURIComponent(`SANDO BRIEFING: ${classification}`);
+            const body = encodeURIComponent(
+                `PRINCIPAL IDENTITY: ${identity}\n` +
+                `SECURE CONTACT: ${email}\n` +
+                `CLASSIFICATION: ${classification}\n\n` +
+                `STATEMENT OF REQUIREMENT:\n${requirement}\n\n` +
+                `---\nTRANSMITTED VIA SANDO SECURE PORTAL`
+            );
+
+            window.location.href = `mailto:briefings@sandosadvisory.co.nz?subject=${subject}&body=${body}`;
+            
+            alert("Vetting Complete. Please send the generated transmission via your secure email client.");
+        };
+    </script>
 
 </body>
 </html>
