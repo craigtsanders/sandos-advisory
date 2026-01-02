@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Strategic Assets | SANDO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e2e8f0", 
+                        "background-dark": "#0B1120", 
+                        "card-dark": "#161e2e",
+                        "text-muted": "#94a3b8",
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background-dark text-white min-h-screen font-['Inter']">
+
+    <header class="sticky top-0 z-50 bg-[#0B1120]/90 backdrop-blur-md border-b border-white/5">
+        <div class="flex items-center justify-between p-4">
+            <a href="../index.html" class="flex items-center gap-2 group">
+                <span class="material-symbols-outlined text-primary text-2xl group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                <span class="text-white text-sm font-bold uppercase tracking-tight">Return</span>
+            </a>
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-3xl">shield_moon</span>
+                <h1 class="text-white text-xl font-black tracking-[0.2em] uppercase">SANDO</h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-16">
+        <section class="mb-16">
+            <p class="text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-2">Inventory Restricted</p>
+            <h2 class="text-4xl font-black leading-tight mb-4">Strategic <span class="text-primary">Assets</span></h2>
+            <p class="text-text-muted max-w-xl text-sm leading-relaxed">
+                SANDO does not sell products; we authorize the transfer of intelligence. These blueprints are designed for principals who require absolute operational continuity.
+            </p>
+        </section>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            
+            <div class="bg-card-dark border border-white/5 rounded-2xl p-8 flex flex-col justify-between hover:border-primary/20 transition-all group">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="material-symbols-outlined text-primary text-4xl">Lan</span>
+                        <span class="text-[10px] font-bold text-primary border border-primary/30 px-2 py-1 rounded">V.1.04</span>
+                    </div>
+                    <h3 class="text-xl font-black mb-4 group-hover:text-primary transition-colors">The Redundancy Blueprint</h3>
+                    <p class="text-text-muted text-xs leading-relaxed mb-6">
+                        A definitive manual for maintaining absolute operational continuity. Learn to bypass Tier-1 carrier failures, establish geographic failovers, and decouple your identity from single-source providers.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-[10px] uppercase font-bold tracking-widest text-white/70">
+                            <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                            Infrastructure Resilience
+                        </li>
+                        <li class="flex items-center gap-2 text-[10px] uppercase font-bold tracking-widest text-white/70">
+                            <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                            Multi-Region Failover
+                        </li>
+                        <li class="flex items-center gap-2 text-[10px] uppercase font-bold tracking-widest text-white/70">
+                            <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+                            Strategic Sovereignty
+                        </li>
+                    </ul>
+                </div>
+                <button onclick="requestAccess('The Redundancy Blueprint')" class="w-full bg-white text-background-dark font-black py-4 rounded-xl hover:bg-primary transition-all uppercase tracking-widest text-xs">
+                    Inquire for Access
+                </button>
+            </div>
+
+            <div class="bg-card-dark/30 border border-dashed border-white/10 rounded-2xl p-8 flex flex-col items-center justify-center text-center opacity-50">
+                <span class="material-symbols-outlined text-white/20 text-5xl mb-4">lock</span>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-white/40">Asset Under Review</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="mt-20 border-t border-white/5 py-12 px-6 text-center">
+        <p class="text-[10px] text-text-muted uppercase tracking-[0.4em]">SANDO Private Office // Established 2026</p>
+    </footer>
+
+    <script>
+        function requestAccess(assetName) {
+            const subject = encodeURIComponent(`ASSET INQUIRY: ${assetName}`);
+            const body = encodeURIComponent(
+                `PRINCIPAL BRIEFING REQUIRED\n\n` +
+                `ASSET IDENTIFIED: ${assetName}\n` +
+                `SOCIETY STATUS: VETTED\n\n` +
+                `Statement of Interest:\n[Enter your justification here]\n\n` +
+                `---\nTRANSMITTED VIA SANDO STOREFRONT`
+            );
+
+            // Directly to your cPanel restored mail server
+            window.location.href = `mailto:briefings@sandosadvisory.co.nz?subject=${subject}&body=${body}`;
+            
+            alert("Secure Link Established. Please transmit your statement of interest via your default mail client.");
+        }
+    </script>
+
+</body>
+</html>
